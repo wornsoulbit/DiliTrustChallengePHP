@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 //Database connection.
 $host = '127.0.0.1';
@@ -16,7 +16,7 @@ try {
 
 echo "Hello World! From PHP!";
 
-?>
+?> -->
 
 <html>
     <head>
