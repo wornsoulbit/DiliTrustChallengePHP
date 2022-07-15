@@ -4,6 +4,8 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
+    $conn = createDBConnection($conn);
+
     if (isset($_POST['Login'])) {
         echo "Login Attempt\n";
         // Call login verification function
@@ -20,19 +22,24 @@ error_reporting(E_ALL);
         $password = $_POST['password'];
         echo "username: " . $username . " Password: " . $password . "\n";
     }
-    
-    $servername = "localhost";
-    $DBName = 'DiliTrust';
-    $username = "root";
-    $password = "admin";
 
-    try {
-    $conn = new PDO("mysql:host=$servername;dbname=$DBName", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Connected successfully\n";
-    } catch(PDOException $e) {
-        echo "Connection failed: " . $e->getMessage() . "\n";
+    function createDBConnection($DBConnection) {
+        if ($DBConnection == null) {
+            $servername = "localhost";
+            $DBName = 'DiliTrust';
+            $username = "root";
+            $password = "admin";
+        
+            try {
+                $connection = new PDO("mysql:host=$servername;dbname=$DBName", $username, $password);
+                // set the PDO error mode to exception
+                $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                echo "Connected successfully\n";
+                return $connection;
+            } catch(PDOException $e) {
+                echo "Connection failed: " . $e->getMessage() . "\n";
+            }
+        }
     }
 
     function verifyLogin() {
