@@ -1,8 +1,8 @@
-<!-- <?php
+<?php
 
 //Database connection.
 $host = '127.0.0.1';
-$DBName = 'dilitrust';
+$DBName = 'DiliTrust';
 $username = 'root';
 $password = 'admin'
 
@@ -16,7 +16,7 @@ try {
 
 echo "Hello World! From PHP!";
 
-?> -->
+?>
 
 <html>
     <head>
