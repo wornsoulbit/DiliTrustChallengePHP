@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <?php 
-    if (isset($_POST['action'])) {
-        echo $_POST;
-        if (isset($_POST['action']['Login'])) {
-            echo "Login Attempt";
-            // Call login verification function
+    if (isset($_POST['Login'])) {
+        echo "Login Attempt";
+        // Call login verification function
 
-            if (verifyLogin()) {
-                // Login to the user
-                echo "Welcome user";
-                // Create a session token.
-            } else {
-                // Don't log in.
-                echo "Invalid username/password";
-            }
+        if (verifyLogin()) {
+            // Login to the user
+            echo "Welcome user";
+            // Create a session token.
+        } else {
+            // Don't log in.
+            echo "Invalid username/password";
         }
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -49,7 +46,7 @@
     <form method="post" action="">
         <label>Username: <input type="text" name="username" /></label><br />
         <label>Password: <input type="password" name="password" /></label><br />
-        <input type="submit" name="action" value="Login" />
+        <input type="submit" name="Login" value="Login" />
     </form>
     <a href="register.php">Register Here!</a>
 </body>
