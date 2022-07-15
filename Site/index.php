@@ -8,8 +8,8 @@
 
     $servername = "localhost";
     $DBName = 'DiliTrust';
-    $username = "username";
-    $password = "password";
+    $username = "root";
+    $password = "admin";
 
     try {
     $conn = new PDO("mysql:host=$servername;dbname=$DBName", $username, $password);
