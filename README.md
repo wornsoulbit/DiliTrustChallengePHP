@@ -18,8 +18,8 @@ Coding challenge site for DiliTrust
 
 1. [ ] User Management
 2. [ ] User Document Access Management
-3. ~~[ ] Document Encryption~~
-4. ~~[ ] Multi-language~~
+3. [ ] ~~Document Encryption~~
+4. [ ] ~~Multi-language~~
 
 ---
 
