@@ -9,12 +9,6 @@ error_reporting(E_ALL);
     $dbusername = "root";
     $password = "admin";
 
-    $conn = new mysqli($servername, $dbusername, $password, $DBName);
-
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
     if (isset($_POST['Login'])) {
         echo "Login Attempt\n";
         // Call login verification function
@@ -34,6 +28,11 @@ error_reporting(E_ALL);
     }
 
     function verifyLogin($username, $conn) {
+        $conn = new mysqli($servername, $dbusername, $password, $DBName);
+
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
         // TODO: Retrieve data from db, verify username and password hash.
         // session_start();
         $stmt = $conn->prepare("SELECT username FROM User WHERE username = :username");
