@@ -4,18 +4,13 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
-    $servername = "localhost";
-    $DBName = 'DiliTrust';
-    $dbusername = "root";
-    $password = "admin";
-
     if (isset($_POST['Login'])) {
         echo "Login Attempt\n";
         // Call login verification function
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        if (verifyLogin($username, $conn)) {
+        if (verifyLogin($username)) {
             // Login to the user
             echo "Welcome user\n";
             // Create a session token.
@@ -27,7 +22,11 @@ error_reporting(E_ALL);
         echo "username: " . $username . " Password: " . $password . "\n";
     }
 
-    function verifyLogin($username, $conn) {
+    function verifyLogin($username) {
+        $servername = "localhost";
+        $DBName = 'DiliTrust';
+        $dbusername = "root";
+        $password = "admin";
         $conn = new mysqli($servername, $dbusername, $password, $DBName);
 
         if ($conn->connect_error) {
