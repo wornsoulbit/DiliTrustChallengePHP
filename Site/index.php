@@ -4,8 +4,6 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
-    public $conn;
-
     if (isset($_POST['Login'])) {
         echo "Login Attempt\n";
         // Call login verification function
@@ -40,11 +38,11 @@ error_reporting(E_ALL);
     function verifyLogin() {
         // TODO: Retrieve data from db, verify username and password hash.
         // session_start();
-        // $stmt = $conn->prepare("SELECT username FROM User WHERE username EQUALS $username");
-        // $stmt->execute();
-        // echo $stmt;
-        // $result = $stmt->fetch();
-        // print_r($result);
+        $stmt = $conn->prepare("SELECT username FROM User WHERE username EQUALS $username");
+        $stmt->execute();
+        echo $stmt;
+        $result = $stmt->fetch();
+        print_r($result);
 
         return false;
     }
