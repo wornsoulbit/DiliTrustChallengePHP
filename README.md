@@ -1,8 +1,6 @@
 # DiliTrustChallengePHP
 Coding challenge site for DiliTrust
 
-Basic site that allows an user to
-
 ---
 
 ## Main Features
@@ -14,13 +12,17 @@ Basic site that allows an user to
 5. [ ] Document Download
 6. [ ] Document Deletion
 
-The features listed above are all features that will be implemented. 
-
 ---
 
 ## Optional Features
 
 1. [ ] User Management
 2. [ ] User Document Access Management
-~~3. Document Encryption~~
-~~4. Multi-language~~
+3. ~~Document Encryption~~
+4. ~~Multi-language~~
+
+---
+
+The features that are striked out won't be implemented. 
+The features that are unchecked aren't implemented in the current code base.
+
