@@ -4,11 +4,24 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
+    $servername = "localhost";
+    $DBName = 'DiliTrust';
+    $dbusername = "root";
+    $password = "admin";
+
+    $conn = new mysqli($servername, $dbusername, $password, $DBName);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
     if (isset($_POST['Login'])) {
         echo "Login Attempt\n";
         // Call login verification function
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
-        if (verifyLogin()) {
+        if (verifyLogin($username)) {
             // Login to the user
             echo "Welcome user\n";
             // Create a session token.
@@ -16,26 +29,11 @@ error_reporting(E_ALL);
             // Don't log in.
             echo "Invalid username/password\n";
         }
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+        
         echo "username: " . $username . " Password: " . $password . "\n";
     }
 
-    $servername = "localhost";
-    $DBName = 'DiliTrust';
-    $username = "root";
-    $password = "admin";
-
-    try {
-        $conn = new PDO("mysql:host=$servername;dbname=$DBName", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Connected successfully\n";
-    } catch(PDOException $e) {
-        echo "Connection failed: " . $e->getMessage() . "\n";
-    }
-
-    function verifyLogin() {
+    function verifyLogin($username) {
         // TODO: Retrieve data from db, verify username and password hash.
         // session_start();
         $stmt = $conn->prepare("SELECT username FROM User WHERE username EQUALS $username");
