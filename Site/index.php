@@ -14,4 +14,10 @@ try {
     echo "Connection Failed: " . $e->getMessage();
 }
 
+echo "Hello World! From PHP!";
+
 ?>
+
+<html>
+<body> Hello World! </body>
+</html>
