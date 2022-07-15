@@ -40,10 +40,11 @@ error_reporting(E_ALL);
     function verifyLogin() {
         // TODO: Retrieve data from db, verify username and password hash.
         // session_start();
-        $stmt = $conn->prepare("SELECT username FROM User WHERE username EQUALS $username");
-        $stmt->execute();
-        $result = $stmt->fetchAll();
-        print_r($result);
+        // $stmt = $conn->prepare("SELECT username FROM User WHERE username EQUALS $username");
+        // $stmt->execute();
+        // echo $stmt;
+        // $result = $stmt->fetch();
+        // print_r($result);
 
         return false;
     }
