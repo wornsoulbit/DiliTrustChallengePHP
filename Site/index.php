@@ -4,7 +4,11 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
-    $conn = createDBConnection($conn);
+    public $conn = null;
+
+    public function __construct() {
+        $this->conn = createDBConnection($this->conn);
+    }
 
     if (isset($_POST['Login'])) {
         echo "Login Attempt\n";
