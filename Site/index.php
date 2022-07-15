@@ -34,7 +34,17 @@
     function verifyLogin() {
         // TODO: Retrieve data from db, verify username and password hash.
         // session_start();
+        $stmt = $conn->prepare("SELECT username FROM User WHERE username EQUALS $username");
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        print_r($result);
+        
         return false;
+    }
+
+    function insertUser() {
+        $sql = "INSERT INTO Users (username, password_hash) VALUES (?, ?)";
+        $conn->prepare($sql)->execute([$username, $password]);
     }
 ?>
 <head> 
