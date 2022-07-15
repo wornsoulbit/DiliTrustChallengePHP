@@ -24,7 +24,7 @@
 			<input type="submit" name="action" value="Login" id="loginButton"/>
 
 		</form>
-		<a href="/register">No account? Register.</a>
+		<a href="/register.php">No account? Register.</a>
 	</div>
 </body>
 </html>
