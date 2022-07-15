@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php 
     if (isset($_POST['action'])) {
+        echo $_POST['action'];
         if (isset($_POST['Login'])) {
             echo "Login Attempt";
         }
