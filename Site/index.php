@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php 
     if (isset($_POST['action'])) {
-        if (isset($_POST['login'])) {
+        if (isset($_POST['Login'])) {
             echo "Login Attempt";
         }
         $username = $_POST['username'];
@@ -27,7 +27,6 @@
     <title> Landing Page </title> 
 </head>
 <body>
-    //Login form
     <?php
     if (isset($_GET['error']))
         echo $_GET['error'];
