@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<?php 
+    if (isset($_POST['action'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        echo "username: " . $username . " Password: " . $password;
+    }
+?>
 <head> <title> Landing Page </title> </head>
 <body>
     <?php
@@ -10,5 +17,5 @@
         <label>Password: <input type="password" name="password" /></label><br />
         <input type="submit" name="action" value="Login" />
     </form>
-    <a href="<?= BASE ?>/Default/register">Register Here!</a>
+    <a href="register.php">Register Here!</a>
 </body>
