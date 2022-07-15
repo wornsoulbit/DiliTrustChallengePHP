@@ -11,4 +11,5 @@ $path = preg_replace('/^.+\\\\htdocs\\\\/', '/', $path);
 $path = str_replace('\\', '/', $path);
 define("BASE", $path);
 
+
 ?>
