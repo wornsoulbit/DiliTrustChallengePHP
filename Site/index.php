@@ -4,11 +4,7 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
-    public $conn = null;
-
-    public function __construct() {
-        $this->conn = createDBConnection($this->conn);
-    }
+    public $conn = createDBConnection();
 
     if (isset($_POST['Login'])) {
         echo "Login Attempt\n";
@@ -27,8 +23,8 @@ error_reporting(E_ALL);
         echo "username: " . $username . " Password: " . $password . "\n";
     }
 
-    function createDBConnection($DBConnection) {
-        if ($DBConnection == null) {
+    function createDBConnection() {
+        if (is_null($conn)) {
             $servername = "localhost";
             $DBName = 'DiliTrust';
             $username = "root";
