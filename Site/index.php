@@ -24,21 +24,19 @@ error_reporting(E_ALL);
     }
 
     function createDBConnection() {
-        if (is_null($conn)) {
-            $servername = "localhost";
-            $DBName = 'DiliTrust';
-            $username = "root";
-            $password = "admin";
-        
-            try {
-                $connection = new PDO("mysql:host=$servername;dbname=$DBName", $username, $password);
-                // set the PDO error mode to exception
-                $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                echo "Connected successfully\n";
-                return $connection;
-            } catch(PDOException $e) {
-                echo "Connection failed: " . $e->getMessage() . "\n";
-            }
+        $servername = "localhost";
+        $DBName = 'DiliTrust';
+        $username = "root";
+        $password = "admin";
+    
+        try {
+            $connection = new PDO("mysql:host=$servername;dbname=$DBName", $username, $password);
+            // set the PDO error mode to exception
+            $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            echo "Connected successfully\n";
+            return $connection;
+        } catch(PDOException $e) {
+            echo "Connection failed: " . $e->getMessage() . "\n";
         }
     }
 
