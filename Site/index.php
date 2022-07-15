@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php 
     if (isset($_POST['action'])) {
+        echo $_POST[];
         if (isset($_POST['action']['Login'])) {
             echo "Login Attempt";
             // Call login verification function
