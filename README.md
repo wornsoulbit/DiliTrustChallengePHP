@@ -5,21 +5,21 @@ Coding challenge site for DiliTrust
 
 ## Main Features
 
-[ ] Login
-[ ] Logout
-[ ] Sign-up
-[ ] Document Upload
-[ ] Document Download
-[ ] Document Deletion
+1. [ ] Login
+2. [ ] Logout
+3. [ ] Sign-up
+4. [ ] Document Upload
+5. [ ] Document Download
+6. [ ] Document Deletion
 
 ---
 
 ## Optional Features
 
-[ ] User Management
-[ ] User Document Access Management
-~~[ ] Document Encryption~~
-~~[ ] Multi-language~~
+1. [ ] User Management
+2. [ ] User Document Access Management
+3. ~~[ ] Document Encryption~~
+4. ~~[ ] Multi-language~~
 
 ---
 
