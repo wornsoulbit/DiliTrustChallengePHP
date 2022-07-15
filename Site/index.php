@@ -11,7 +11,7 @@
         $DBName = 'DiliTrust';
         $username = 'root';
         $password = 'admin'
-
+        echo "Test before try";
         try {
             $conn = new \PDO("mysql:host=$host;dbname=$DBName;charset=utf-8;", $username, $password);
             $conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_SILENT);
