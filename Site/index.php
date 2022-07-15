@@ -21,7 +21,7 @@ error_reporting(E_ALL);
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        if (verifyLogin($username)) {
+        if (verifyLogin($username, $conn)) {
             // Login to the user
             echo "Welcome user\n";
             // Create a session token.
@@ -33,7 +33,7 @@ error_reporting(E_ALL);
         echo "username: " . $username . " Password: " . $password . "\n";
     }
 
-    function verifyLogin($username) {
+    function verifyLogin($username, $conn) {
         // TODO: Retrieve data from db, verify username and password hash.
         // session_start();
         $stmt = $conn->prepare("SELECT username FROM User WHERE username EQUALS $username");
