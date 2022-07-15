@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <?php 
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
     if (isset($_POST['Login'])) {
         echo "Login Attempt\n";
         // Call login verification function
@@ -38,7 +42,7 @@
         $stmt->execute();
         $result = $stmt->fetchAll();
         print_r($result);
-        
+
         return false;
     }
 
