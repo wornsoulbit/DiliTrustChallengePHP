@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <?php 
     if (isset($_POST['action'])) {
-        echo $_POST['action'];
-        if (isset($_POST['Login'])) {
+        if (isset($_POST['action']['Login'])) {
             echo "Login Attempt";
+            // Call login verification function
+
+            if (verifyLogin()) {
+                // Login to the user
+                echo "Welcome user";
+                // Create a session token.
+            } else {
+                // Don't log in.
+                echo "Invalid username/password";
+            }
         }
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -22,6 +31,10 @@
         // echo "Connected successfully";
     } catch(PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
+    }
+
+    function verifyLogin() {
+        return false;
     }
 ?>
 <head> 
