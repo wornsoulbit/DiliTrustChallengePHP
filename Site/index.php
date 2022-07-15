@@ -24,7 +24,7 @@
 			<input type="submit" name="action" value="Login" id="loginButton"/>
 
 		</form>
-		<a href="<?=BASE?>/Default/register">No account? Register.</a>
+		<a href="/register">No account? Register.</a>
 	</div>
 </body>
 </html>
