@@ -19,7 +19,7 @@
 			<input type="submit" name="action" value="Register" id="register"/>
 
 		</form>
-		<a href="/login.php">Already have an account? Login.</a>
+		<a href="/index.php">Already have an account? Login.</a>
 	</div>
 </body>
 </html>
