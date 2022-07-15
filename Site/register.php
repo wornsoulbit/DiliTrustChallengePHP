@@ -1,12 +1,4 @@
 <!DOCTYPE html>
-<?php 
-    function insert() {
-        $stmt = self::$conn->prepare("INSERT INTO Profile(username, password) VALUES (:username, :password)");
-        $result = $stmt->execute(['username' => $username, 'password' => $password]);
-        $this->profile_id = self::$conn->lastInsertId();
-        return $result;
-    }
-?>
 <html>
     <head>
         <title>Register an account</title>
