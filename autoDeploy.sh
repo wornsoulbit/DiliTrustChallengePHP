@@ -10,5 +10,5 @@ upToDateMessage=$(git pull)
 if ! [[ $upToDateMessage == "Already up to date." ]];
 then
 	#(1)copy static files to the correct location
-	sudo rsync -r Site/* /var/www/html
+	sudo rsync -r /* /var/www/html
 fi	
