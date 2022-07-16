@@ -6,7 +6,7 @@ require "autoload.php";
 require "core/phpqrcode/qrlib.php";
 
 $path = getcwd();
-$path = preg_replace('/^.+\\\\htdocs\\\\/', '/', $path);
+$path = preg_replace('/^.+\\\\Site\\\\/', '/', $path);
 $path = str_replace('\\', '/', $path);
 define("BASE", $path);
 
